@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridScanner.AppHost", "GridScanner.AppHost\GridScanner.AppHost.csproj", "{9FF7FAA7-1D3E-4EDF-B329-0AEC2BE9FE76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.ServiceDefaults", "GridScanner.ServiceDefaults\GridScanner.ServiceDefaults.csproj", "{B7FBD6A3-1D61-472B-BE1F-4EC1C6704D2A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.ApiService", "GridScanner.ApiService\GridScanner.ApiService.csproj", "{B2D97A00-8A0E-47D1-BD4A-15E6FE07F84A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.Web", "GridScanner.Web\GridScanner.Web.csproj", "{1D3733EC-A99B-4D84-A396-D3029EBBEFD7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.Tests", "GridScanner.Tests\GridScanner.Tests.csproj", "{F0580BB1-0BFB-42A1-92C0-F006EE554F46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FF7FAA7-1D3E-4EDF-B329-0AEC2BE9FE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF7FAA7-1D3E-4EDF-B329-0AEC2BE9FE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF7FAA7-1D3E-4EDF-B329-0AEC2BE9FE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF7FAA7-1D3E-4EDF-B329-0AEC2BE9FE76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7FBD6A3-1D61-472B-BE1F-4EC1C6704D2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7FBD6A3-1D61-472B-BE1F-4EC1C6704D2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7FBD6A3-1D61-472B-BE1F-4EC1C6704D2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7FBD6A3-1D61-472B-BE1F-4EC1C6704D2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2D97A00-8A0E-47D1-BD4A-15E6FE07F84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2D97A00-8A0E-47D1-BD4A-15E6FE07F84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2D97A00-8A0E-47D1-BD4A-15E6FE07F84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2D97A00-8A0E-47D1-BD4A-15E6FE07F84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3733EC-A99B-4D84-A396-D3029EBBEFD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3733EC-A99B-4D84-A396-D3029EBBEFD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3733EC-A99B-4D84-A396-D3029EBBEFD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3733EC-A99B-4D84-A396-D3029EBBEFD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0580BB1-0BFB-42A1-92C0-F006EE554F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0580BB1-0BFB-42A1-92C0-F006EE554F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0580BB1-0BFB-42A1-92C0-F006EE554F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0580BB1-0BFB-42A1-92C0-F006EE554F46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21323216-B44E-4AB1-9B8D-11A5FC418FCD}
+	EndGlobalSection
+EndGlobal
