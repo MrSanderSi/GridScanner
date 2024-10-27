@@ -17,6 +17,6 @@ public class GridScannerDbContext : DbContext
         modelBuilder.Entity<DayData>()
             .HasOne(x => x.HourlyPrices)
             .WithOne(x => x.DayData)
-            .IsRequired(true);
+            .HasForeignKey<HourlyPrice>(x => x.DayDataId);
     }
 }
