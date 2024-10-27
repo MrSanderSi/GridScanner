@@ -27,18 +27,18 @@ public class GetDayPricesFromDatabase
         var response = new EnergyResponse();
         if (result != null)
         {
-            var allPrices = new List<decimal>()
+            var allPrices = new List<decimal>();
+
+            for (int i = 1; i <= 25; i++)
             {
-                result.Hour1, result.Hour2, result.Hour3,
-                result.Hour4, result.Hour5, result.Hour6,
-                result.Hour7, result.Hour8, result.Hour9,
-                result.Hour10, result.Hour11, result.Hour12,
-                result.Hour13, result.Hour14, result.Hour15,
-                result.Hour16, result.Hour17, result.Hour18,
-                result.Hour19, result.Hour20, result.Hour21,
-                result.Hour22, result.Hour23, result.Hour24 ?? 0,
-                result.Hour25 ?? 0,
-            };
+                var propertyName = $"Hour{i}";
+                var propertyInfo = result.GetType().GetProperty(propertyName);
+                if (propertyInfo != null)
+                {
+                    var value = propertyInfo.GetValue(result) as decimal?;
+                    allPrices.Add(value ?? 0);
+                }
+            }
 
             response.Prices.AddRange(allPrices);
             response.StatusCode = System.Net.HttpStatusCode.OK;
