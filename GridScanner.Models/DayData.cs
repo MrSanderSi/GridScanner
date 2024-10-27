@@ -12,6 +12,6 @@ public class DayData
 	public DateOnly Date { get; set; }
 	public decimal DayHigh { get; set; }
 	public decimal DayLow { get; set; }
-	public decimal WeightedAvg { get; set; }
+	public decimal Avg { get; set; }
 	public virtual HourlyPrice HourlyPrices { get; set; }
 }

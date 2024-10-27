@@ -21,6 +21,6 @@ public class ApiResponseMessage
 
     public ApiResponseMessage()
     {
-        ResultMessage = "Generic error";
+        ResultMessage = string.Empty;
     }
 }

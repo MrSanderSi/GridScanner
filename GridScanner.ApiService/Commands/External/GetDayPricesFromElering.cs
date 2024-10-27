@@ -25,9 +25,7 @@ public class GetDayPricesFromElering
         uriBuilder.Query = query.ToString();
         var url = uriBuilder.ToString();
 
-        HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, url)
-        {
-        };
+        HttpRequestMessage requestMessage = new(HttpMethod.Get, url) {};
 
         var response = await Client.SendAsync(requestMessage);
         var result = new EnergyResponse();
@@ -39,6 +37,7 @@ public class GetDayPricesFromElering
             var responseMessage = JsonSerializer.Deserialize<EleringResponseDto>(responseBody, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
             result.Prices = responseMessage.Data.Ee.Select(x => x.Price).ToList();
+            result.ResultMessage = "Retreived from Elering";
         }
 
         return result;

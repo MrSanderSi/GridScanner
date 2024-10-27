@@ -1,4 +1,5 @@
 using GridScanner.ApiService.Commands.External;
+using GridScanner.ApiService.Commands.Internal;
 using GridScanner.ApiService.Services;
 using GridScanner.Data;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,8 @@ builder.Services.AddDbContext<GridScannerDbContext>(options =>
 
 builder.Services.AddScoped<EnergyPriceScannerService>();
 builder.Services.AddScoped<GetDayPricesFromElering>();
+builder.Services.AddScoped<GetDayPricesFromDatabase>();
+builder.Services.AddScoped<SaveDayPricesToDatabase>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
