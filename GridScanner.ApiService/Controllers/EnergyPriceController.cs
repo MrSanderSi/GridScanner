@@ -15,8 +15,8 @@ public class EnergyPriceController : ControllerBase
         _energyPriceScannerService = service;
     }
 
-    [HttpPost("GetPricesForGivenDay")]
-    public async Task<IActionResult> PostAsync(GetPricesRequest request)
+    [HttpGet("GetPricesForGivenDay")]
+    public async Task<IActionResult> PostAsync([FromQuery]GetPricesRequest request)
     {
         var result = await _energyPriceScannerService.GetPriceForGivenDate(request);
 

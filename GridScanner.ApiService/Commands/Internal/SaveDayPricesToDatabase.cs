@@ -36,7 +36,7 @@ public class SaveDayPricesToDatabase
 
             if (propertyInfo != null)
             {
-                propertyInfo.SetValue(hourlyPrice, saveEnergyResponse.Prices[i]);
+				propertyInfo.SetValue(hourlyPrice, saveEnergyResponse.Prices[i]);
             }
         }
 

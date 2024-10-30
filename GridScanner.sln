@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridScanner.AppHost", "GridScanner.AppHost\GridScanner.AppHost.csproj", "{9FF7FAA7-1D3E-4EDF-B329-0AEC2BE9FE76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.AppHost", "GridScanner.AppHost\GridScanner.AppHost.csproj", "{9FF7FAA7-1D3E-4EDF-B329-0AEC2BE9FE76}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.ServiceDefaults", "GridScanner.ServiceDefaults\GridScanner.ServiceDefaults.csproj", "{B7FBD6A3-1D61-472B-BE1F-4EC1C6704D2A}"
 EndProject
@@ -12,9 +12,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.Web", "GridScan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.Tests", "GridScanner.Tests\GridScanner.Tests.csproj", "{F0580BB1-0BFB-42A1-92C0-F006EE554F46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridScanner.Data", "GridScanner.Data\GridScanner.Data.csproj", "{76F6D9D4-DE5F-4648-8C29-296D7E139265}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.Data", "GridScanner.Data\GridScanner.Data.csproj", "{76F6D9D4-DE5F-4648-8C29-296D7E139265}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridScanner.Models", "GridScanner.Models\GridScanner.Models.csproj", "{973F113B-EC5C-4099-AD4B-415A33C9940F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GridScanner.Models", "GridScanner.Models\GridScanner.Models.csproj", "{973F113B-EC5C-4099-AD4B-415A33C9940F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4BB44A34-9639-4D54-B519-1730A1243B30}"
+	ProjectSection(SolutionItems) = preProject
+		GridScanner.UI\global.json = GridScanner.UI\global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
