@@ -20,9 +20,7 @@ public class GetDayPricesFromDatabase
     {
         var result = await _db.Set<DayData>()
             .Include(x => x.HourlyPrices)
-            .Where(x => x.Date == DateOnly.FromDateTime(startDate))
-            .Select(x => x.HourlyPrices)
-            .FirstOrDefaultAsync();
+            .FirstOrDefaultAsync(x => x.Date == DateOnly.FromDateTime(startDate));
 
         var response = new EnergyResponse();
         if (result != null)
@@ -32,10 +30,11 @@ public class GetDayPricesFromDatabase
             for (int i = 1; i <= 25; i++)
             {
                 var propertyName = $"Hour{i}";
-                var propertyInfo = result.GetType().GetProperty(propertyName);
+                var propertyInfo = result.HourlyPrices.GetType().GetProperty(propertyName);
                 if (propertyInfo != null)
                 {
-                    var value = propertyInfo.GetValue(result) as decimal?;
+                    var value = propertyInfo.GetValue(result.HourlyPrices) as decimal?;
+
                     allPrices.Add(value ?? 0);
                 }
             }
@@ -44,6 +43,7 @@ public class GetDayPricesFromDatabase
             response.StatusCode = System.Net.HttpStatusCode.OK;
             response.IsSuccess = true;
             response.ResultMessage = "Retreived from database";
+            response.Date = DateOnly.FromDateTime(startDate);
         }
 
         return response;

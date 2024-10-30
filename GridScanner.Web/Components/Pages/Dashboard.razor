@@ -1,0 +1,64 @@
+﻿@page "/"
+
+@using Microsoft.AspNetCore.Components.Forms
+@using Telerik.Blazor
+@using Telerik.Blazor.Components
+
+<div class="electricity-prices-section">
+    <div class="date-input-row">
+        <div class="date-section">
+            <div>Select date:</div>
+            <InputDate @bind-Value="@StartDate" />
+        </div>
+        <div class="overview-section">
+            <div class="statistics">
+                <div>Day low:</div>
+                <div>@DayLow</div>
+            </div>
+            <div class="statistics">
+                <div>Day high:</div>
+                <div>@DayHigh</div>
+            </div>
+            <div class="statistics">
+                <div>Avarage:</div>
+                <div>@Avarage</div>
+            </div>
+        </div>
+        <div class="update-prices-section">
+            <TelerikButton OnClick="Update">Update Prices</TelerikButton>
+        </div>
+    </div>
+
+    <TelerikChart>
+        <ChartSeriesItems>
+            <ChartSeries Type="ChartSeriesType.Line" Name="Cent/kWh" Data="@PriceList">
+            </ChartSeries>
+        </ChartSeriesItems>
+
+        <ChartCategoryAxes>
+            <ChartCategoryAxis Categories="@Hours"></ChartCategoryAxis>
+        </ChartCategoryAxes>
+
+        <ChartTitle Text="Electricity price per hour"></ChartTitle>
+
+        <ChartLegend Position="ChartLegendPosition.Right">
+        </ChartLegend>
+    </TelerikChart>
+
+    <table class="table">
+        <tr>
+            <th>Price (cent/kWh)</th>
+            @foreach (var hourlyPrice in HourlyPrices)
+            {
+                <td class ="@(hourlyPrice.Color)">@hourlyPrice.Price</td>
+            }
+        </tr>
+        <tr>
+            <th>Hour</th>
+            @foreach (var hour in Hours)
+            {
+                <td>@hour</td>
+            }
+        </tr>
+    </table>
+</div>

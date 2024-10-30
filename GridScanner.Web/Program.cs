@@ -1,7 +1,16 @@
 using GridScanner.Web;
 using GridScanner.Web.Components;
+using GridScanner.Web.Services;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Add framework services.
+builder.Services
+	.AddRazorPages().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+// Add Kendo UI services to the services container
+builder.Services.AddKendo();
 
 // Add service defaults & Aspire components.
 builder.AddServiceDefaults();
@@ -10,13 +19,15 @@ builder.AddServiceDefaults();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddOutputCache();
+// TELERIK
+builder.Services.AddTelerikBlazor();
 
-builder.Services.AddHttpClient<WeatherApiClient>(client =>
+builder.Services.AddOutputCache();
+builder.Services.AddScoped<ElectricityPriceService>();
+
+builder.Services.AddHttpClient<GridScannerApiClient>(client =>
     {
-        // This URL uses "https+http://" to indicate HTTPS is preferred over HTTP.
-        // Learn more about service discovery scheme resolution at https://aka.ms/dotnet/sdschemes.
-        client.BaseAddress = new("https+http://apiservice");
+        client.BaseAddress = new("https+http://localhost:7417");
     });
 
 var app = builder.Build();
